@@ -184,12 +184,3 @@ No automatic tracking. User removes a word from wishlist when they feel confiden
 
 ---
 
-## Next Steps — Phase 3: Setup
-
-- [ ] Init Git repository
-- [ ] Define folder structure
-- [ ] TypeScript strict mode
-- [ ] ESLint + Prettier
-- [ ] Vitest setup
-- [ ] GitHub Actions — lint + test on every push
-- [ ] Deploy skeleton to Vercel
