@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import { supabase } from './config/supabase'
 
 const app = express()
 
@@ -8,9 +9,10 @@ app.use(cors({
 }))
 app.use(express.json())
 
-// Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' })
+// connect check
+app.get('/connect', async (req, res) => {
+  const { error } = await supabase.from('users').select('id').limit(1)
+  res.json({ status: error ? 'db error' : 'db connected' })
 })
 
 export default app
